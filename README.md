@@ -1,70 +1,153 @@
-# Getting Started with Create React App
+# Quiz Application
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Description
+This quiz application, built with React.js, allows users to select a subject, take a timed quiz, and receive immediate feedback on their performance with a pass/fail status.
 
-## Available Scripts
+## Features
+- Subject Selection
+- Timed Quiz Questions
+- Dynamic Score Calculation
+- Pass/Fail Status Display
+- Additional Features:
+  - Timer for each question
+  - Different difficulty levels (due)
+  - Leaderboard to track top scores (due)
+ 
+## Application Flow
+- **Visit to home page (TestInfo page)**
+  - Enter your name.
+  - Select a subject for the test you want to practice.
+  - Click on `Start Quiz` button.
+    
+    ![image](https://github.com/pravindnikam07/quiz-application/assets/101383047/2801b15a-3121-4ee0-8459-cd3f2cba601f)
 
-In the project directory, you can run:
 
-### `npm start`
+- **Quiz test starts**
+  - You have click on one of the button for answer.
+  - You will get 30 seconds to answer any of the question if you miss then it will move to next question.
+    
+     ![image](https://github.com/pravindnikam07/quiz-application/assets/101383047/111d5a54-11d5-44df-9daf-ec064dc4b27c)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- **Score and Result**
+  - For every correct answer: `2`
+  - For every missing/wrong answer: `-1`
+  - You will be pass if you score if above `60%` 
+    
+    ![image](https://github.com/pravindnikam07/quiz-application/assets/101383047/93664d36-4891-45e9-b010-0f5a81a3166f)
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+  - You will be fail if score is less the `60%`
 
-### `npm test`
+    ![image](https://github.com/pravindnikam07/quiz-application/assets/101383047/558abaf7-262c-4b01-9c2d-3f373d307203)
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- **User profile**
+  - User details (Store in local storage)
+  - Scoring history (store in local storage)
 
-### `npm run build`
+    ![image](https://github.com/pravindnikam07/quiz-application/assets/101383047/1fd80874-b3fb-40ad-9d0d-ffb287cd7d54)
+ 
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Technologies Used
+- React.js
+- JavaScript
+- CSS
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Installation
 
-### `npm run eject`
+1. Clone the repository:
+    ```bash
+    git clone https://github.com/pravindnikam07/quiz-application.git
+    ```
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+2. Navigate to the project directory:
+    ```bash
+    cd quiz-application
+    ```
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+3. Install the dependencies:
+    ```bash
+    npm install
+    ```
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+## Usage
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+1. Start the development server:
+    ```bash
+    npm start
+    ```
 
-## Learn More
+2. Open your browser and navigate to `http://localhost:3000`
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## Project Structure
+```
+quiz-application/
+├── public/
+│ ├── index.html
+│ └── ...
+├── src/
+│ ├── components/
+│ │ ├── CustomButton.jsx
+│ │ ├── CustomDialog.jsx
+│ │ ├── Navbar.jsx
+│ │ └── ...
+│ ├── data/
+│ │ ├── questions.js
+│ │ └── ...
+│ ├── pages/
+│ │ ├── Greeting.jsx
+│ │ ├── Profile.jsx
+│ │ ├── Ranking.jsx
+│ │ ├── StartTest.jsx
+│ │ ├── TestInfo.jsx
+│ │ └── ...
+│ ├── routes/
+│ │ ├── AllRoutes.jsx
+│ │ └── ...
+│ ├── styles/
+│ │ ├── CustomButton.css
+│ │ ├── Navbar.css
+│ │ ├── Profile.css
+│ │ ├── Styles.css
+│ │ └── ...
+│ ├── App.js
+│ ├── index.js
+│ └── App.css
+├── .gitignore
+├── package.json
+├── README.md
+└── ...
+```
 
-To learn React, check out the [React documentation](https://reactjs.org/).
 
-### Code Splitting
+## Components
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+### CustomButton
+- A reusable button component with custom styling.
 
-### Analyzing the Bundle Size
+### CustomDialog
+- A reusable dialog component for displaying messages and alerts.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+## Pages
 
-### Making a Progressive Web App
+### TestInfo
+- The page showing detailed information about the selected quiz. User has to enter name and select subject.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+### StartTest
+- The main quiz page where users take the quiz, with each question timed.
 
-### Advanced Configuration
+### Greeting
+- The greeting messeges once users complete test.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+### Profile
+- The page showing user details along with scores in each test.
 
-### Deployment
+  ### Rankings
+- The page containing leaderboard of users (currenting in development phase).
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
 
-### `npm run build` fails to minify
+## Data
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+### questions.js
+- Contains the quiz questions categorized by subject.
+
+
