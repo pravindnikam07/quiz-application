@@ -47,10 +47,14 @@ const StartTest = () => {
       const passThreshold = 0.6 * QUESTIONS_BY_SUBJECT[user.subject].length * 2;
       const result = newScore >= passThreshold ? 'You passed!' : 'You failed!';
       setDialogContent(`Your final score is ${newScore}. ${result}`);
-      setShowDialog(true);
       saveScore(user.subject, newScore, result);
+      setShowDialog(true);
+      
+      setTimeout(() => {
+        navigate('/user');
+      }, 5000);
     }
-  }, [score, currentQuestionIndex, user?.subject]);
+  }, [score, currentQuestionIndex, user?.subject, navigate]);
 
   useEffect(() => {
     if (timeLeft === 0) {
