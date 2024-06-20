@@ -46,7 +46,7 @@ const Profile = () => {
       
       </div>
       
-      <button className="custom-button" onClick={() => navigate('/greeting')}>Back to Home</button>
+      <button className="custom-button" onClick={() => navigate('/')}>Back to Home</button>
     </div>
   );
 };
